@@ -1,0 +1,48 @@
+.amount-wrapper {
+  align-items: center !important;
+  text-align: center;
+  background-color: #d194ff;
+}
+.amount {
+  background-color: #ede4f5;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+  padding-top: 5%;
+}
+.amount h1 {
+  margin-top: 55px;
+}
+.info-wrap {
+  align-items: center;
+  padding: 2%;
+}
+.info {
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+  padding: 2%;
+  height: 200px;
+  z-index: 1;
+  background-color: white;
+  border-radius: 20px;
+}
+ion-card {
+  --background: #d194ff;
+  margin-top: 10px;
+  border-top-left-radius: 100px;
+}
+.head {
+  color: white;
+  text-align: center;
+}
+.login-btn {
+  color: #d194ff;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+ion-button {
+  --background: white;
+}

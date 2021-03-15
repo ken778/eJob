@@ -60,6 +60,59 @@ const routes: Routes = [
     path: 'complain',
     loadChildren: () => import('./pages/complain/complain.module').then( m => m.ComplainPageModule)
   },
+  {
+    path: 'jobs',
+    loadChildren: () => import('./pages/jobs/jobs.module').then( m => m.JobsPageModule)
+  },
+  {
+    path: 'candidates',
+    loadChildren: () => import('./pages/candidates/candidates.module').then( m => m.CandidatesPageModule)
+  },
+  {
+    path: 'employer',
+    loadChildren: () => import('./pages/employer/employer.module').then( m => m.EmployerPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'pay',
+    loadChildren: () => import('./pages/pay/pay.module').then( m => m.PayPageModule)
+  },
+  {
+    path: 'paypal-page',
+    loadChildren: () => import('./pages/paypal-page/paypal-page.module').then( m => m.PaypalPagePageModule)
+  },
+  {
+    path: 'post-job',
+    loadChildren: () => import('./pages/post-job/post-job.module').then( m => m.PostJobPageModule)
+  },
+  {
+    path: 'success',
+    loadChildren: () => import('./pages/success/success.module').then( m => m.SuccessPageModule)
+  },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
+  },
+  {
+    path: 'application-form',
+    loadChildren: () => import('./pages/application-form/application-form.module').then( m => m.ApplicationFormPageModule)
+  },
+  {
+    path: 'jobs',
+    loadChildren: () => import('./pages/jobs/jobs.module').then( m => m.JobsPageModule)
+  },
+  {
+    path: 'detailed/:ref',
+    loadChildren: () => import('./pages/detailed/detailed.module').then( m => m.DetailedPageModule)
+  },
+
 ];
 
 @NgModule({

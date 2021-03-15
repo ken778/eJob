@@ -18,6 +18,7 @@ export class LoginPage implements OnInit {
 
   email: string;
   password : string;
+  role:string;
 
   constructor(private router: Router,private afs: AngularFirestore, private authent: AngularFireAuth, private auth : AuthService, private toastr : ToastController, private loadingCtrl : LoadingController) { }
 
@@ -41,6 +42,16 @@ export class LoginPage implements OnInit {
      })
      loading.present();
      this.auth.login(this.email, this.password).then(()=>{
+      if(this.role==='recruiter'){
+        console.log('login success'),
+        loading.dismiss();
+        this.router.navigate(['/employer']);
+       }else if
+         (this.role==='job seeker'){
+          console.log('login success'),
+          loading.dismiss();
+          this.router.navigate(['/home']);
+         }
        loading.dismiss();
      }).catch((error)=>{
        loading.dismiss();

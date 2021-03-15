@@ -15,7 +15,8 @@ export class RegisterPage implements OnInit {
   email: string;
   password: string;
   confirmPassword: string;
- 
+  role:string;
+  surname:string;
   passwordMatch : boolean;
 
   constructor(private afs: AngularFirestore, private afauth: AngularFireAuth, private loadingCtrl: LoadingController, private toastr: ToastController, private router: Router) { }
@@ -34,10 +35,12 @@ export class RegisterPage implements OnInit {
       loading.present();
 
       this.afauth.createUserWithEmailAndPassword(this.email, this.password).then((data)=>{
-        this.afs.collection('users').doc(data.user.uid).set({
+        this.afs.collection('user').doc(data.user.uid).set({
           'userId' : data.user.uid,
           'name' : this.name,
+          'surname': this.surname,
           'email' : this.email,
+          'role': this.role,
           'createdAt' : Date.now() 
 
         })

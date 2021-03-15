@@ -1,4 +1,8 @@
-import { environment } from './../environments/environment.prod';
+import { JobService } from './services/job.service';
+import { JobFeedsService } from './services/job-feeds.service';
+import { environment } from './../environments/environment';
+import { HttpClientModule} from '@angular/common/http';
+
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,18 +31,24 @@ import {AuthService} from './services/auth.service';
 //gurds
 import {AuthGuard} from './guards/auth.guard'
 
+//
+import{ Ng2SearchPipeModule} from 'ng2-search-filter';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
   FormsModule,
-
+  HttpClientModule,
   AngularFireModule.initializeApp(environment.firebaseConfig),
   AngularFireAuthModule,
-  AngularFirestoreModule
+  AngularFirestoreModule,
+  Ng2SearchPipeModule
 ],
   providers: [
     AuthService,
+    JobService,
+    JobFeedsService,
     AuthGuard,
     StatusBar,
     SplashScreen,

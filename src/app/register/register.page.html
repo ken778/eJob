@@ -1,16 +1,33 @@
 
 <ion-content class="ion-padding">
 
-  <ion-card>
+
     <ion-card-header>
       <ion-card-title style="text-align: center;">Register</ion-card-title>
     </ion-card-header>
     <ion-card-content>
+      
       <ion-list>
+         <label>Sign In as </label><br>
+        <div id="role" class="md-form">
+         
+            <div class="first">
+              <input type="radio" [(ngModel)]="role" value="recruiter" id="radio" > recruiter
+            </div>
+            <div class="second">
+              <input type="radio" [(ngModel)]="role" value="job seeker"  id="radio"   > job seeker
+          </div>          
+        </div>
+        
         <ion-item>
           <ion-label position="floating">Name</ion-label>
           <ion-input [(ngModel)]="name" type="text"></ion-input>
         </ion-item>
+
+        <ion-item>
+          <ion-label position='floating'>Surname</ion-label> 
+          <ion-input [(ngModel)]='surname' type="text"></ion-input>
+        </ion-item> 
 
         <ion-item>
           <ion-label position="floating">Email</ion-label>
@@ -27,10 +44,10 @@
           <ion-input [(ngModel)]="confirmPassword" type="password" (ionChange)="checkPassword()"></ion-input>
           <ion-text *ngIf="password && !passwordMatch" color="danger" >Password do not match</ion-text>
           <ion-text *ngIf="password && passwordMatch" color="success" >Password match</ion-text>
-        </ion-item>
+        </ion-item> 
       </ion-list>
     </ion-card-content>
     <ion-button [disabled]="!passwordMatch" expand="block" shape="round" color="primary" (click)="register()">Register</ion-button>
-  </ion-card>
+
 
 </ion-content>

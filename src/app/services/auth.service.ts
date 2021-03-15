@@ -21,6 +21,7 @@ export class AuthService {
   user:User;
  
   subject : string;
+  role: string;
 
   constructor(private afauth:AngularFireAuth, private afs: AngularFirestore, private router: Router, private loadingCtrl: LoadingController, private toastr: ToastController)
    { 
@@ -29,7 +30,7 @@ export class AuthService {
         {
           if(user)
           {
-           return this.afs.doc('users/${user.uid}').valueChanges();
+           return this.afs.doc('User/${user.uid}').valueChanges();
           } else{
             return of(null)
           }
@@ -53,11 +54,9 @@ export class AuthService {
          loading.dismiss();
          this.toast('Please verify your email', 'danger');
          this.logout();
-       }else{
-         loading.dismiss();
-         this.router.navigate(['/home']);
        }
      })
+     loading.dismiss();
    }//end of login
 
    //logout

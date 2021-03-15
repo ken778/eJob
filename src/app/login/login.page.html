@@ -1,14 +1,20 @@
 
 <ion-content  class="ion-padding">
-   <p>Welcome</p>
-   <h3>Sing In</h3>
-  <ion-card class="login-card">
-    <ion-card-header>
-      <ion-card-title style="text-align: center;color: black;">Login</ion-card-title>
-      <ion-card-subtitle class="subtitle" >TalkToUs</ion-card-subtitle>
-    </ion-card-header>
+   <h3>Login</h3>
+  
+
     <ion-card-content>
       <ion-list>
+        <label>Sign In as </label><br>
+        <div id="role" class="md-form">
+         
+            <div class="first">
+              <input type="radio" [(ngModel)]="role" value="recruiter" id="radio" > recruiter
+            </div>
+            <div class="second">
+              <input type="radio" [(ngModel)]="role" value="job seeker"  id="radio"   > job seeker
+          </div>          
+        </div>
       
         <ion-item>
           <ion-label position="floating">Email</ion-label>
@@ -17,7 +23,7 @@
 
         <ion-item>
           <ion-label position="floating">password</ion-label>
-          <ion-input [(ngModel)]="password" type="password"></ion-input>
+          <ion-input [(ngModel)]="password" type="password" ></ion-input>
         </ion-item>
 
       </ion-list>
@@ -32,9 +38,6 @@
     <br>
     <p>Don't have an Account? <a (click)="register()">Register Now!</a></p>
    </div>
-  </ion-card>
-  <div class="signIn">
-    dgdgdgdgdgdgd
-    ttrtewtbrtrt
-  </div>
+
+
 </ion-content>
