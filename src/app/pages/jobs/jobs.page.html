@@ -1,9 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>jobs</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content>
+  <h1>Recent Jobs</h1>
+  <ion-card  *ngFor="let item of jobs" [routerLink]="['/', 'detailed', item.payload.doc.id]"
+  routerLinkActive="router-link-active">
+  
+  
+ 
+    <ion-card-header>
+      <ion-card-subtitle>
+        
+      </ion-card-subtitle>
+      <ion-card-title>{{item.payload.doc.data().postname}}</ion-card-title>
+       <p>{{item.payload.doc.data().posttype}}</p>
+     
+    </ion-card-header>
+    <a
+    class="back"
+    [routerLink]="['/', 'detailed', item.payload.doc.id]"
+    routerLinkActive="router-link-active"
+    ></a
+  >
+  </ion-card>
 
+
+  
 </ion-content>

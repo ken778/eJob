@@ -13,8 +13,8 @@
 }
 
 ion-content {
-  --background: #cddaf7;
-  padding: 0;
+  --background: url('/assets/background/background.jpg');
+  padding: 4%;
 }
 .login-card {
   margin-top: 20px;
@@ -42,17 +42,31 @@ ion-content {
 #role {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 ion-input {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+
   padding: 2% !important;
+  --background: #C4C4C4;
+  color: black;
+
 }
-ion-item {
-  padding: 2% !important;
-}
+
 ion-label {
   margin-left: 10px !important;
+}
+
+  
+  
+  
+
+.first,.second,.loginAs{
+  color:   #FFFFFF;
+}
+h3{
+  color:   #FFFFFF; 
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+   
 }

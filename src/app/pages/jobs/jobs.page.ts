@@ -16,7 +16,7 @@ export class JobsPage implements OnInit {
   constructor(public _data: JobService, public _route: ActivatedRoute) { }
 
   ngOnInit() {
-     //get Job id
+   /*  //get Job id
      this.Ref = this._route.snapshot.paramMap.get('ref');
      console.log('Id:', this.Ref);
 
@@ -24,7 +24,7 @@ export class JobsPage implements OnInit {
     this.Job = this._data.getJobInfo(this.Ref).subscribe((i) => {
       this.Job = i;
       console.log(this.Job);
-    });
+    }); */
 
     //return Jobs
     this._data

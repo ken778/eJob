@@ -5,5 +5,21 @@
 </ion-header>
 
 <ion-content>
+  <ion-card  *ngIf="job" >
+  
+  
+ 
+    <ion-card-header>
+    
+      <ion-card-title>{{job.postname}}</ion-card-title>
+      <ion-card-subtitle>
+        {{job.location}}
+      </ion-card-subtitle>
+     
+    </ion-card-header>
+   
+  
+  </ion-card>
 
 </ion-content>
+ 

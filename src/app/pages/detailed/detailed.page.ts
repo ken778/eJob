@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-detailed',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailedPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private _route : ActivatedRoute,private _data: JobService) { }
+  joID:any;
+  job:any;
   ngOnInit() {
+      this.joID = this._route.snapshot.paramMap.get('ref');
+      console.log(this.joID);
+
+      //getting single job data
+      this.job = this._data.getJobInfo(this.joID).subscribe((i) => {
+        this.job = i;
+        console.log(this.job);
+      });
+  
   }
 
 }

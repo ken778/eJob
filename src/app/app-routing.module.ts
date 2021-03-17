@@ -111,7 +111,11 @@ const routes: Routes = [
   {
     path: 'detailed/:ref',
     loadChildren: () => import('./pages/detailed/detailed.module').then( m => m.DetailedPageModule)
+  },  {
+    path: 'upload-file',
+    loadChildren: () => import('./pages/upload-file/upload-file.module').then( m => m.UploadFilePageModule)
   },
+
 
 ];
 

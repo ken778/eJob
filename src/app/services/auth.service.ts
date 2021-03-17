@@ -23,14 +23,23 @@ export class AuthService {
   subject : string;
   role: string;
 
+  currentUser:any;
+
   constructor(private afauth:AngularFireAuth, private afs: AngularFirestore, private router: Router, private loadingCtrl: LoadingController, private toastr: ToastController)
    { 
+    this.afauth.onAuthStateChanged(user=>{
+      console.log('changed: ', user);
+      this.currentUser = user;
+      console.log(this.currentUser)
+    })
+
     this.user$ = this.afauth.authState.pipe(
       switchMap(user=>
         {
-          if(user)
+          if(user) 
           {
            return this.afs.doc('User/${user.uid}').valueChanges();
+           console.log('hey im here')
           } else{
             return of(null)
           }

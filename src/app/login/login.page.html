@@ -1,33 +1,33 @@
 
 <ion-content  class="ion-padding">
    <h3>Login</h3>
-  
+   
 
-    <ion-card-content>
-      <ion-list>
-        <label>Sign In as </label><br>
+   
+     
+        <label class="loginAs">Sign In as </label><br>
         <div id="role" class="md-form">
          
             <div class="first">
-              <input type="radio" [(ngModel)]="role" value="recruiter" id="radio" > recruiter
+              <input class="select" type="radio" [(ngModel)]="role" value="recruiter" id="radio" > recruiter
             </div>
             <div class="second">
-              <input type="radio" [(ngModel)]="role" value="job seeker"  id="radio"   > job seeker
+              <input class="select" type="radio" [(ngModel)]="role" value="job seeker"  id="radio"   > job seeker
           </div>          
         </div>
       
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input [(ngModel)]="email" type="email"></ion-input>
-        </ion-item>
+         <!--
+          <ion-label position="floating">Email</ion-label>-->
+          <ion-input [(ngModel)]="email" type="email" placeholder="Email"></ion-input>
+          <br>
+        
+         <!--
+          <ion-label position="floating">password</ion-label>-->
+          <ion-input [(ngModel)]="password" type="password" placeholder="Password" ></ion-input>
+        
 
-        <ion-item>
-          <ion-label position="floating">password</ion-label>
-          <ion-input [(ngModel)]="password" type="password" ></ion-input>
-        </ion-item>
-
-      </ion-list>
-    </ion-card-content>
+    
+   
     <ion-button class="login-btn" expand="block" shape="round" (click)="login()">Login</ion-button>
     <div class="googleLogin" style="padding: 5px; text-align: center;">
       <p>Or continue with</p>

@@ -3,15 +3,30 @@
   justify-content: space-between;
 }
 ion-input {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  
   padding: 2% !important;
+  --background: #C4C4C4;
+  color: black;
+
 }
 ion-item {
   padding: 2% !important;
 }
 ion-label {
   margin-left: 10px !important;
+}
+ion-content {
+  --background: url('/assets/background/background.jpg');
+}
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: black;
+      
+  }
+  .Reg,.role,.regAs{
+    color:white
+  }
+
+.btnSign{
+  color: white;
 }
