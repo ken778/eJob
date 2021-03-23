@@ -50,7 +50,7 @@ export class LoginPage implements OnInit {
          (this.role==='job seeker'){
           console.log('login success'),
           loading.dismiss();
-          this.router.navigate(['/home']);
+          this.router.navigate(['/jobs']);
          }
        loading.dismiss();
      }).catch((error)=>{
@@ -65,7 +65,8 @@ export class LoginPage implements OnInit {
  async toast(message, status){
    const toast = await this.toastr.create({
      message: message,
-     position: 'top',
+     cssClass: 'custom',
+     position: 'bottom',
      color: status,
      duration: 2000
    })   

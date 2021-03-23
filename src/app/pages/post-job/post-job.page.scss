@@ -2,5 +2,9 @@ ion-header {
   text-align: center;
 }
 ion-content {
-  --background: url('/assets/background/background.jpg');
+  --background: url("/assets/background/background.jpg") no-repeat center/cover
+    fixed;
+}
+ion-label {
+  padding: 4%;
 }

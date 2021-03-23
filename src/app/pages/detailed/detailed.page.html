@@ -15,11 +15,27 @@
       <ion-card-subtitle>
         {{job.location}}
       </ion-card-subtitle>
+      <div class="info">
+        <div class="first">
+          <p class="p">{{job.posttype}}</p>
+        </div>
+        <div class="second">
+          <p class="p">{{job.date}}</p>
+        </div>
+        <div class="third">
+
+        </div>
+      </div>
+      <p class="p">{{job.posttype}}</p>
      
     </ion-card-header>
-   
-  
+    
+    
   </ion-card>
+  <ion-card ion-card  *ngIf="job" >
+    <p >{{job.description}}</p>
 
+  </ion-card>
+  <ion-button class="login-btn" expand="block" shape="round" (click)="apply()">Apply</ion-button>
 </ion-content>
  

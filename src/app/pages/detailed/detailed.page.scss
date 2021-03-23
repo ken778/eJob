@@ -1,8 +1,28 @@
 ion-card-title,
-ion-card-subtitle{
-text-align: center;
+ion-card-subtitle {
+  text-align: center;
 }
 
-  ion-content {
-    --background: url('/assets/background/background.jpg');
+ion-content {
+  --background: url("/assets/background/background.jpg") no-repeat center/cover
+    fixed;
+}
+.p {
+  padding: 3%;
+  background-color: #c4c4c4;
+  width: 100px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 10px;
+}
+p {
+  padding: 3%;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+login-btn {
+  margin-bottom: 15px;
 }

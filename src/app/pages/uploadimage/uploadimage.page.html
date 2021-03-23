@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<ion-content class="background-image">
+ 
+  <!--upload from k-->
+   
+  <ion-input type="file" (change)="upload($event)" accept="*.png.jpg.pdf" id="" ></ion-input>
+  <ion-button (click)="uploadImage()">Upload Files</ion-button>
+  
+   <!--endupload from k-->
+  <ion-button  expand='block' shape='round' color='primary'  [routerLink]="['/profile']">Continue</ion-button>
+
+
+
+</ion-content>

@@ -1,5 +1,7 @@
 {
   "name": "TalkToUs",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,9 +1,52 @@
-<ion-header>
+<ion-header class="ion-no-border icon">
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-button    (click)="toJobs()"></ion-button>
+    <ion-icon class="icon2" name="arrow-undo" slot="start"></ion-icon>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background-image">
+  <div class="container">
+    <div class="overlay">
+      <ion-avatar>
+        <!--<img src="../../../assets/images/header1.jpg">-->
+        <ion-img [src]="profileImageUrl"></ion-img>
+
+      </ion-avatar>
+    </div>
+
+
+  </div>
+
+<ion-card *ngIf='details'>
+  <ion-card-header>
+    <ion-card-title>
+      {{details.name}}
+    </ion-card-title>
+    <ion-button  expand='block' shape='round' color='primary' [routerLink]="['/uploadimage']">Edit</ion-button>
+    <ion-card-subtitle>
+      Location
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+
+    <ion-item lines="none">
+      <ion-icon name="mail"></ion-icon>
+      <ion-label>{{details.email}}</ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="call"></ion-icon>
+      <ion-label>+27 *** *** ****</ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="locate"></ion-icon>
+      <ion-label>Location</ion-label>
+    </ion-item>
+
+  </ion-card-content>
+</ion-card>
 
 </ion-content>

@@ -1,20 +1,65 @@
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-  <ion-tab-button tab="profile">
-    
-    <ion-icon name="person-sharp"></ion-icon>
-    <ion-label>profile</ion-label>
-  </ion-tab-button>
+<ion-header class="ion-no-border icon">
+  <ion-toolbar>
+    <ion-button    (click)="toJobs()"></ion-button>
+    <ion-icon class="icon2" name="arrow-undo" slot="start"></ion-icon>
+    <ion-title>External Jobs</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-tab-button tab="complaints">
-    <ion-icon name="list-circle-sharp"></ion-icon>
-    <ion-label>complaints</ion-label>
-  </ion-tab-button>
+<ion-content class="background-image">
+<ion-card>
+  <ion-card-header>
+    <img src="../../assets/images/Careers cartoon.jpg" alt="">
+    <ion-card-subtitle></ion-card-subtitle>
+    <ion-card-title>Paving a way</ion-card-title>
+  </ion-card-header>
 
-  <ion-tab-button tab="about">
-    <ion-icon name="information-circle-sharp"></ion-icon>
-    <ion-label>about</ion-label>
-  </ion-tab-button>
+  <ion-card-content>
+    The future depends on what you do Today!
 
-  </ion-tab-bar>
-</ion-tabs>
+    <br>
+  
+<!-- Animated Searchbar -->
+
+
+<ion-button class="button" expand='block' (click)='search()'>Display all jobs</ion-button>
+<br>
+
+<ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+
+<br>
+
+<ion-card class="card" *ngFor="let item of jobsData| filter:filterTerm">
+  <ion-input class="text">
+    <br>
+   Title-- {{item.title}}
+   <br>
+   <br>
+   Comapny Name--{{item.company.display_name}}
+   <br>
+   <br>
+  Job Description:<br>{{item.description}}
+ 
+ <br>
+ <br>
+ Job location:--{{item.location.area}}
+ 
+ </ion-input>
+  
+</ion-card>
+  </ion-card-content>
+</ion-card>
+
+<!--<ion-list>
+  <ion-item>
+    <ion-label (click)='search()'>Search by Sector</ion-label>
+    <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="IT Jobs">IT Jobs</ion-select-option>
+      <ion-select-option value="Finance Jobs">Finance Jobs</ion-select-option>
+      <ion-select-option value="Sales Job">Sales Jobs</ion-select-option>
+      <ion-select-option value="Engineering Jobs">Engineering Jobs</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>-->
+
+</ion-content>

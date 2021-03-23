@@ -13,8 +13,8 @@
 }
 
 ion-content {
-  --background: url('/assets/background/background.jpg');
-  padding: 4%;
+  --background: url("/assets/background/background.jpg") no-repeat center/cover
+    fixed;
 }
 .login-card {
   margin-top: 20px;
@@ -45,28 +45,43 @@ ion-content {
   margin-bottom: 10px;
 }
 ion-input {
-
   padding: 2% !important;
-  --background: #C4C4C4;
+  --background: #c4c4c4;
   color: black;
-
 }
 
 ion-label {
   margin-left: 10px !important;
 }
 
-  
-  
-  
-
-.first,.second,.loginAs{
-  color:   #FFFFFF;
+.first,
+.second,
+.loginAs {
+  color: #ffffff;
 }
-h3{
-  color:   #FFFFFF; 
+h3 {
+  color: #ffffff;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: black;
-   
+}
+
+.custom {
+  z-index: 999;
+  background-color: yellow;
+}
+#ion-overlay {
+  background-color: yellow;
+}
+.logo {
+  text-align: center;
+  align-content: center;
+  margin-top: 5rem !important;
+}
+.logo img {
+  margin-top: 2rem;
+}
+.container {
+  margin-top: 7rem;
 }

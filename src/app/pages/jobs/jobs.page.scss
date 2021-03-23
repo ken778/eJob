@@ -1,26 +1,24 @@
 ion-content {
-    --background: url('/assets/background/background.jpg');
+  --background: url("/assets/background/background.jpg") no-repeat center/cover
+    fixed;
 }
-ion-card-header{
-    text-align: center;
-    align-items: center;
-    align-content: center;
+ion-card-header {
+  text-align: center;
+  align-items: center;
+  align-content: center;
 }
-p{
-    padding: 3%;
-    background-color: white;
-    width: 100px;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    border-radius: 10px;
-
+p {
+  padding: 3%;
+  background-color: white;
+  width: 100px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 10px;
 }
-ion-card{
-    --background: #C4C4C4;
+ion-card {
+  --background: #c4c4c4;
 }
-h1{
-    padding: 3%;
-   
-    
+h1 {
+  padding: 3%;
 }

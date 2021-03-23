@@ -1,0 +1,71 @@
+ion-content {
+  --ion-background-color: white;
+}
+
+ion-header {
+  position: relative;
+  --ion-background-color: #1352c7e8;
+}
+ion-toolbar {
+  --ion-background-color: #1352c7e8;
+  --opacity: 0;
+}
+ion-tittle {
+  font-size: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  color: black;
+}
+.container {
+  width: 100%;
+  height: 200px;
+  display: block;
+  border-color: black;
+}
+.overlay {
+  position: relative;
+  text-align: center;
+  top: 60%;
+}
+ion-avatar {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border: 4px solid black;
+}
+
+ion-card {
+  margin-top: 40px;
+  --ion-background-color: transparent !important;
+  box-shadow: none;
+  text-align: center;
+}
+ion-item {
+  --ion-item-background: gray;
+  text-align: center;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 14px;
+  border-radius: 5px;
+  --min-heigth: 35px;
+  margin-bottom: 15px;
+}
+ion-label {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+.icon {
+  background-color: #c4c4c4;
+}
+.background-image {
+  --background: url("/assets/background/background.jpg") no-repeat center/cover
+    fixed;
+}
+ion-content {
+  --background: url("/assets/background/background.jpg") no-repeat center/cover
+    fixed;
+}

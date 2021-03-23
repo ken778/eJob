@@ -3,11 +3,9 @@
   justify-content: space-between;
 }
 ion-input {
-  
   padding: 2% !important;
-  --background: #C4C4C4;
+  --background: #c4c4c4;
   color: black;
-
 }
 ion-item {
   padding: 2% !important;
@@ -16,17 +14,21 @@ ion-label {
   margin-left: 10px !important;
 }
 ion-content {
-  --background: url('/assets/background/background.jpg');
+  --background: url("/assets/background/background.jpg") no-repeat center/cover
+    fixed;
 }
 
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: black;
-      
-  }
-  .Reg,.first,.second,.regAs{
-    color:white
-  }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+}
+.Reg,
+.first,
+.second,
+.regAs {
+  color: white;
+}
 
-.btnSign{
+.btnSign {
   color: white !important;
 }

@@ -1,3 +1,75 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
+<ion-app>
+  <!--menu funtioanilities-->
+  <ion-menu contentId="menu-content" menuId="menu-content" side="start" type="push">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>eJobs Menu</ion-title>
+      </ion-toolbar>
+
+    </ion-header>
+    <ion-content>
+
+      
+
+      <ion-list>
+        
+        <ion-item [routerLink]="['/profile']">
+          <ion-label>Profile       </ion-label>
+          <ion-icon slot="start" name="person"></ion-icon>
+        </ion-item>
+      
+
+      
+        <ion-item [routerLink]="['/home']">
+          <ion-label>External Jobs </ion-label>
+          <ion-icon slot="start" name="search"></ion-icon>
+        </ion-item>
+        
+    
+     
+          
+  
+    
+      
+
+        
+          
+            <ion-item [routerLink]="['/settings']">
+          <ion-label>Settings</ion-label>
+          <ion-icon slot="start" name="settings"></ion-icon>
+        </ion-item>
+         
+        <ion-item [routerLink]="['/jobs']">
+          <ion-label>Jobs</ion-label>
+          <ion-icon slot="start" name="post"></ion-icon>
+        </ion-item>
+
+       
+
+        <ion-item [routerLink]="['/#']">
+          <p>Help</p>
+          <ion-icon slot="start" name="help-circle-sharp"></ion-icon>
+        </ion-item>
+
+        <ion-item [routerLink]="['/pro']">
+          <p>pro</p>
+          <ion-icon slot="start" name="help-circle-sharp"></ion-icon>
+        </ion-item>
+      
+      </ion-list>
+      
+      <ion-item [routerLink]="['/login']">
+        <ion-label style="cursor:pointer"  (click)="auth.logout()">Sign Out</ion-label>
+
+        <ion-icon slot="start" name="log-out"></ion-icon>
+      </ion-item>
+     
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="menu-content"></ion-router-outlet>
+  <!--end of menu funtioanilities-->
+</ion-app>

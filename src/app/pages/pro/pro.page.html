@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-card *ngIf='details'>
+   <p>{{details.name}}</p>
+   <ion-button (click)="logout()">Logout</ion-button><br>
+   
+
+ </ion-card>
+<ion-button (click)="toPost()">Post</ion-button>
+</ion-content>

@@ -9,6 +9,7 @@ import {switchMap} from 'rxjs/operators'
 
 
 
+
 import {firebase} from '@firebase/app'
 import '@firebase/auth';
 
@@ -27,11 +28,11 @@ export class AuthService {
 
   constructor(private afauth:AngularFireAuth, private afs: AngularFirestore, private router: Router, private loadingCtrl: LoadingController, private toastr: ToastController)
    { 
-    this.afauth.onAuthStateChanged(user=>{
-      console.log('changed: ', user);
+    /*this.afauth.onAuthStateChanged(user=>{
+     // console.log('changed: ', user);
       this.currentUser = user;
-      console.log(this.currentUser)
-    })
+      //console.log(this.currentUser)
+    })*/
 
     this.user$ = this.afauth.authState.pipe(
       switchMap(user=>
@@ -39,13 +40,19 @@ export class AuthService {
           if(user) 
           {
            return this.afs.doc('User/${user.uid}').valueChanges();
-           console.log('hey im here')
+           console.log('hey im over here')
           } else{
             return of(null)
           }
         })
     )
-   }//end of constructor
+   }
+  
+
+   //current user
+   LogedUser(){
+     return this.afauth.authState;
+   }
    
 
    async login(email, pass){
@@ -93,6 +100,11 @@ export class AuthService {
     }).catch((err)=>{
       console.log('err',err.message);
     })
+  }
+
+   //get users
+   GetUsers() {
+    return this.afs.collection('user');
   }
 
   

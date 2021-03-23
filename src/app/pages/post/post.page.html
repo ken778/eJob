@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+     <form (ngSubmit)="job(JobData)" #JobData="ngForm" >
+      <ion-label position="floating">position</ion-label><br>
+      <input
+      name="position"
+      ngModel
+      #position="ngModel"
+       type="text" id="materialContactFormName" class="form-control"><br>
+
+      <ion-label position="floating">description</ion-label><br>
+      <input
+      name="description"
+      ngModel
+      #description="ngModel"
+       type="text" id="materialContactFormName" class="form-control"><br>
+      
+     
+       <button type="submit" color="primary">POST</button>
+     </form>
+        
+        
+</ion-content>

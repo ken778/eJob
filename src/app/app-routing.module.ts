@@ -14,8 +14,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
-    //...canActivate(redirectLoggedInToHome)
-    //...canActivate(redirectUnauthorizedToLogin) 
+    
    
   }, 
   {
@@ -111,10 +110,25 @@ const routes: Routes = [
   {
     path: 'detailed/:ref',
     loadChildren: () => import('./pages/detailed/detailed.module').then( m => m.DetailedPageModule)
-  },  {
-    path: 'upload-file',
-    loadChildren: () => import('./pages/upload-file/upload-file.module').then( m => m.UploadFilePageModule)
   },
+  {
+    path: 'uploadimage',
+    loadChildren: () => import('./pages/uploadimage/uploadimage.module').then( m => m.UploadimagePageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'pro',
+    loadChildren: () => import('./pages/pro/pro.module').then( m => m.ProPageModule),
+    canActivate: [AuthGuard],
+  },  {
+    path: 'post',
+    loadChildren: () => import('./pages/post/post.module').then( m => m.PostPageModule)
+  },
+
+
 
 
 ];

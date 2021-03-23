@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JobService } from 'src/app/services/job.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { JobService } from 'src/app/services/job.service';
 })
 export class DetailedPage implements OnInit {
 
-  constructor(private _route : ActivatedRoute,private _data: JobService) { }
+  constructor(private _route : ActivatedRoute,private _data: JobService, private router: Router) { }
   joID:any;
   job:any;
   ngOnInit() {
@@ -22,6 +22,10 @@ export class DetailedPage implements OnInit {
         console.log(this.job);
       });
   
+  }
+
+  apply(){
+    this.router.navigate(['/application-form'])
   }
 
 }
