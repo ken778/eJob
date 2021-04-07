@@ -2,7 +2,7 @@
   <ion-toolbar>
      <!--call for menu funtioanilities-->
 
-     <ion-title slot="end">eJobs</ion-title>
+    
 
      <ion-buttons  slot="start" >
       <ion-menu-button class="menu" menu
@@ -10,31 +10,39 @@
     </ion-buttons>
     <!--end of call for menu funtioanilities-->
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
   <!--testing link-->
+  <ion-card class="main">
+    <h1>Recent Jobs</h1>
+    <ion-card  *ngFor="let item of pickedJobs" [routerLink]="['/', 'detailed', item.payload.doc.id]"
+    routerLinkActive="router-link-active">
+    
+    
+   
+      <ion-card-header>
+        <ion-card-subtitle>
+          
+        </ion-card-subtitle>
+        <ion-card-title>{{item.payload.doc.data().postName}}</ion-card-title>
+        <p>{{item.payload.doc.data().employmentType}}</p> 
+         <p>{{item.payload.doc.data().contractType}}</p>
+        
   
-  <h1>Recent Jobs</h1>
-  <ion-card  *ngFor="let item of jobs" [routerLink]="['/', 'detailed', item.payload.doc.id]"
-  routerLinkActive="router-link-active">
-  
+         
+       
+      </ion-card-header>
+      <a
+      class="back"
+      [routerLink]="['/', 'detailed', item.payload.doc.id]"
+      routerLinkActive="router-link-active"
+      ></a
+    >
+    </ion-card>
+  </ion-card>
   
  
-    <ion-card-header>
-      <ion-card-subtitle>
-        
-      </ion-card-subtitle>
-      <ion-card-title>{{item.payload.doc.data().postname}}</ion-card-title>
-       <p>{{item.payload.doc.data().posttype}}</p>
-     
-    </ion-card-header>
-    <a
-    class="back"
-    [routerLink]="['/', 'detailed', item.payload.doc.id]"
-    routerLinkActive="router-link-active"
-    ></a
-  >
-  </ion-card>
 
 </ion-content>

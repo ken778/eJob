@@ -1,6 +1,5 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-icon class="icon2" name="arrow-back"  (click)="back()" size="large" slot="start"></ion-icon>
     <ion-title> Post </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -114,6 +113,7 @@
           #employmentType="ngModel"
           class="select"
           type="radio"
+          [(ngModel)]="role"
           value="PartTime"
           id="radio"
         />

@@ -1,6 +1,7 @@
+import { JobService } from './../../services/job.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,15 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-job.page.scss'],
 })
 export class PostJobPage implements OnInit {
-
+  Ref:any;
   job:any;  
-  constructor(private router: Router,private _data:AuthService,private afs: AngularFirestore) { }
+  constructor(private router: Router,public _route: ActivatedRoute, private _data:AuthService,private afs: AngularFirestore, private jobser:JobService) { }
 
   ngOnInit() {
+    
       this._data.LogedUser().subscribe(res=>{
         res.uid
         
-        this.afs.collection('job',ref=> ref.where('userID','==',res.uid)).valueChanges().subscribe(dat=>{
+        this.afs.collection('jobs',ref=> ref.where('id_recruiter','==',res.uid)).valueChanges().subscribe(dat=>{
           console.log(dat);
           this.job=dat;
         })
@@ -29,10 +31,16 @@ export class PostJobPage implements OnInit {
   }
 
   toPay(){
-    this.router.navigate(['/pay'])
+    this.router.navigate(['/post'])
   }
   post(){
-  this.router.navigate(['/post']);
+  this.router.navigate(['/posting']);
+  }
+
+  //deleting job
+  delete(){
+    this.Ref = this._route.snapshot.paramMap.get('ref');
+    this.jobser.DeleteJob(this.Ref);
   }
 
 }

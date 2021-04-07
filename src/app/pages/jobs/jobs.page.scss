@@ -18,7 +18,11 @@ p {
 }
 ion-card {
   --background: #c4c4c4;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
 h1 {
   padding: 3%;
+}
+.main {
+  --background: white;
 }

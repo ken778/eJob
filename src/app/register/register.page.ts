@@ -77,4 +77,8 @@ export class RegisterPage implements OnInit {
     toast.present()
   }//end of toast
 
+
+  login(){
+    this.router.navigate(['/login'])
+  }
 }

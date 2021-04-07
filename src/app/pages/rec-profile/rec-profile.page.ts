@@ -1,35 +1,20 @@
-
-import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import firebase from 'firebase/app';
 import { AuthService } from 'src/app/services/auth.service';
-import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
-
-
-
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-rec-profile',
+  templateUrl: './rec-profile.page.html',
+  styleUrls: ['./rec-profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
-  [x: string]: any;
-  
-  profile: any;
-  profileName: any;
-  profileImageUrl: any;
-  profileEmail: any;
-  
+export class RecProfilePage implements OnInit {
+
+
   details:any;
+  constructor(private  database: AngularFirestore, private auth : AuthService,private router:Router) { }
 
-  constructor(private  database: AngularFirestore, private auth : AuthService,private router:Router) {
-    }
-  ngOnInit(){
-
-
+  ngOnInit() {
     this.auth.LogedUser().subscribe(res=>{
       res.uid
       this.auth.GetUsers().doc(res.uid).snapshotChanges().subscribe(element=>{
@@ -45,16 +30,13 @@ export class ProfilePage implements OnInit {
 
        
     }) 
-    
-
-
-
-     
   }
+
   toJobs(){
-     this.router.navigate(['/jobs']);
+    this.router.navigate(['/employer'])
   }
-
-
+  logout(){
+    this.auth.logout();
+  }
 
 }

@@ -1,7 +1,11 @@
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-pro',
@@ -11,33 +15,31 @@ import { Component, OnInit } from '@angular/core';
 export class ProPage implements OnInit {
   details:any;
 
-  constructor(private _data:AuthService,private afs: AngularFirestore, private router: Router) { }
-
-  ngOnInit() {
-    this._data.LogedUser().subscribe(res=>{
-      res.uid
-      this._data.GetUsers().doc(res.uid).snapshotChanges().subscribe(element=>{
-        //console.log(element);
-        this.details = element;
-        //console.log(res.uid);
+  constructor( private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    private auth : AuthService,private menu: MenuController) {
       
-      })
-      this.afs.collection('user').doc(res.uid).valueChanges().subscribe(data=>{
-       console.log(data);
-        this.details=data;
-      })
-
-       
-    }) 
+     }
+     openFirst() {
+      this.menu.enable(true, 'first');
+      this.menu.open('first');
+    }
+    openEnd() {
+      this.menu.open('end');
+    }
+    openCustom() {
+      this.menu.enable(true, 'custom');
+      this.menu.open('custom');
+    }
    
-  }
 
-  logout(){
-    this._data.logout();
-  }
-  toPost(){
-    this.router.navigate(['/post'])
-  }
+      ngOnInit() {
+      
+          
+        
+      
+      }
 
 
  

@@ -51,6 +51,10 @@
   
     </ion-card-content>
     <ion-button class="btnSign" [disabled]="!passwordMatch" expand="block" shape="round" color="primary" (click)="register()">Register</ion-button>
-
+    <div style="padding: 20px;text-align: center;">
+     
+    
+      <p>Already have an Account? click<a (click)="login()"> here </a>to sign in</p>
+     </div>
 
 </ion-content>

@@ -1,0 +1,15 @@
+ion-input {
+    padding: 2% !important;
+    --background: #c4c4c4;
+    color: black;
+  }
+  ion-content {
+    --background: url("/assets/background/background.jpg") no-repeat center/cover
+      fixed;
+  }
+  h2{
+      color: white;
+  }
+  .container{
+      margin-top: 5rem;
+  }

@@ -100,7 +100,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
   },
   {
-    path: 'application-form',
+    path: 'application-form/:ref/:id',
     loadChildren: () => import('./pages/application-form/application-form.module').then( m => m.ApplicationFormPageModule)
   },
   {
@@ -123,10 +123,21 @@ const routes: Routes = [
     path: 'pro',
     loadChildren: () => import('./pages/pro/pro.module').then( m => m.ProPageModule),
     canActivate: [AuthGuard],
-  },  {
+  },
+  {
     path: 'post',
     loadChildren: () => import('./pages/post/post.module').then( m => m.PostPageModule)
   },
+  {
+    path: 'rec-profile',
+    loadChildren: () => import('./pages/rec-profile/rec-profile.module').then( m => m.RecProfilePageModule)
+  },
+  {
+    path: 'posting',
+    loadChildren: () => import('./pages/posting/posting.module').then( m => m.PostingPageModule)
+  },
+
+
 
 
 

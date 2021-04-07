@@ -1,9 +1,136 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>about</ion-title>
+    <ion-title>
+      Blank
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+ 
+  
+    <ion-card>
+      <ion-card-header>
+        <img src="../../assets/Careers cartoon.jpg" alt="">
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>POST A JOB HERE!!!!</ion-card-title>
+        </ion-card-header>
+      </ion-card>
 
+      <form (ngSubmit)="job(JobData)" #JobData="ngForm" >
+              <ion-item>
+                                        
+                <ion-input maxlength="30" minlength="2" #companyName="ngModel" name="companyName" type="text" placeholder="Company name" ngModel required></ion-input>
+              </ion-item>
+
+              <div class="inpu">
+                <ion-label for="ref">Enter Reference number:</ion-label><br>
+                <ion-input #refNumber="ngModel" maxlength="100" minlength="2"  name="refNumber" type="text"  ngModel required></ion-input>
+              
+
+          
+                <ion-label for="ref">Enter post name/title:</ion-label><br>
+                <ion-input  maxlength="100" minlength="5" name="postName" #postName="ngModel" type="text" placeholder="Senior clinical lead" ngModel required>
+              </ion-input>
+          
+              </div>
+                
+
+              
+
+        <ion-list>
+          <ion-list-header>
+            <ion-label>
+              Choose a contract Type:
+            </ion-label>
+          </ion-list-header>
+
+          
+        </ion-list>
+        <label  class="loginAs">Please choose a contract type </label><br>
+        <div id="employment-option" class="md-form">
+                
+          <div class="first">
+            <input  name="contractType"
+            ngModel
+            #contractType="ngModel" class="select" type="radio"  value="Permanent" id="radio" > Permanent
+          </div>
+          <div class="second">
+            <input name="contractType"
+            ngModel
+            #contractType="ngModel" class="select" type="radio"  value="Temporary"  id="radio"   > Temporary
+        </div>          
+        </div>
+
+        <ion-list>
+          <ion-list-header>
+            <ion-label>
+              Hours
+            </ion-label>
+          </ion-list-header>
+
+        
+        </ion-list>
+        <label class="loginAs">Please choose an Employment type </label><br>
+        <div id="employment-option2" class="md-form">
+                
+          <div class="first">
+            <input name="employmentType"
+            ngModel
+            #employmentType="ngModel" class="select" type="radio"  value="FullTime" id="radio" > Full Time
+          </div>
+          <div class="second">
+            <input name="employmentType"
+            ngModel
+            #employmentType="ngModel" class="select" type="radio" [(ngModel)]="role" value="PartTime"  id="radio"   > Part Time
+        </div>          
+        </div>
+
+
+              <div class="jobDesc">
+                <label>Job Description:</label><br>
+                <ion-textarea name="description"
+                ngModel
+                #description="ngModel"   placeholder="type your describtion here.."></ion-textarea>
+              </div>
+              
+              
+
+            
+              
+            
+            
+              <ion-item>
+                <ion-input  name="no"
+                ngModel
+                #no="ngModel"    type="number" placeholder="No of post" ></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                        
+                    <ion-input name="location"
+                    ngModel
+                    #location="ngModel" maxlength="30"  minlength="2"   type="text" placeholder="Location" ngModel required></ion-input>
+                  </ion-item>
+              
+                  <ion-item>
+                                    
+                    <ion-label>Closing date:</ion-label>            
+                    <ion-input name="date"
+                    ngModel
+                    #date="ngModel" min="{{Date}}"  type="date" placeholder="Closing date" ngModel required></ion-input>
+                  </ion-item>
+              
+              
+                  <button type="submit" color="primary">POST</button>
+
+
+</form>
+
+     
+
+
+
+    
+    
 </ion-content>

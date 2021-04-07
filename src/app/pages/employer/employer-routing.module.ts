@@ -18,6 +18,11 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: '',
+        redirectTo: 'post-job',
+        pathMatch: 'full'
+      },
       
       {
         path:'candidates',
@@ -25,6 +30,15 @@ const routes: Routes = [
           {
             path:'',
             loadChildren: () => import('../../pages/candidates/candidates.module').then( m => m.CandidatesPageModule)
+          }
+        ]
+      },
+      {
+        path:'rec-profile',
+        children:[
+          {
+            path:'',
+            loadChildren: () => import('../../pages/rec-profile/rec-profile.module').then( m => m.RecProfilePageModule)
           }
         ]
       },

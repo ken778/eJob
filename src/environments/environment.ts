@@ -7,13 +7,13 @@ export const environment = {
   API_KEY: 'a11afc1d38msh64618b759d6c741p103a5bjsn32d63dd675c5',
   API_URL: ' https://api.adzuna.com/',
   firebaseConfig : {
-    apiKey: "AIzaSyAfgXJE3qLr_ZtIXLe5Xd9L9z_1yfGKOlc",
-    authDomain: "ejob-b368d.firebaseapp.com",
-    projectId: "ejob-b368d",
-    storageBucket: "ejob-b368d.appspot.com",
-    messagingSenderId: "379926941402",
-    appId: "1:379926941402:web:57ba092bea3ce410c01fe3",
-    measurementId: "G-0RHF9STY7M"
+    apiKey: "AIzaSyDaWewFldnjuFZiQzJLIg7GtXW0_albZvw",
+    authDomain: "ejob-d8988.firebaseapp.com",
+    projectId: "ejob-d8988",
+    storageBucket: "ejob-d8988.appspot.com",
+    messagingSenderId: "160266072490",
+    appId: "1:160266072490:web:0a79514660a34b4be47bd3",
+    measurementId: "G-RWM5GT9GWQ"
   }
 };
 /*

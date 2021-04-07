@@ -1,30 +1,26 @@
-import { ToastController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { JobService } from 'src/app/services/job.service';
-import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.page.html',
-  styleUrls: ['./post.page.scss'],
+  selector: 'app-posting',
+  templateUrl: './posting.page.html',
+  styleUrls: ['./posting.page.scss'],
 })
-export class PostPage implements OnInit {
-  id:any;
+export class PostingPage implements OnInit {
 
-  constructor(private toastr: ToastController,private _jobData: JobService,private auth:AuthService,private _afa: AngularFirestore, private router: Router) { }
+  id:any;
+  constructor(private _jobData: JobService,private auth:AuthService ,private _afa: AngularFirestore, private router: Router) { }
 
   ngOnInit() {
     this.auth.LogedUser().subscribe(res=>{
-     this.id=res.uid;
-    })
-  
-
- }
-  
+      this.id=res.uid;
+     })
+  }
   job(JobData:NgForm){
 
     let date = new Date()
@@ -36,7 +32,7 @@ export class PostPage implements OnInit {
       this.auth.LogedUser().subscribe(res => {
       this._afa.collection('user', _ref => _ref.where('userId','==',res.uid)).valueChanges().subscribe( _res => {
         _res.map( action => {
-         const data = action as User;
+          const data = action as User;
           console.log(data)
 
           const jobData : any = {
@@ -46,6 +42,7 @@ export class PostPage implements OnInit {
             'postName': JobData.value.postName,
             'contractType':JobData.value.contractType,
             'employmentType':JobData.value.employmentType,
+            'no':JobData.value.no,
             'location':JobData.value.location,
             'dsc' : JobData.value.description,
             'closeDate':JobData.value.closeDate,
@@ -53,12 +50,9 @@ export class PostPage implements OnInit {
             'createdAt' : createdAt
           }
           //post job
-          console.log(jobData)
 
           this._afa.collection('jobs').add(jobData).then( () => {
             console.log('job posted')
-            this.toast('Job Posted','success')
-            this.router.navigate(['/post-job'])
           }).catch( err => {
             console.log(err.message)
           })
@@ -79,20 +73,6 @@ export class PostPage implements OnInit {
     }).catch(()=>{
       alert('something went wrong')
     })*/
-  }
-
-
-  async toast(message, status){
-    const toast = await this.toastr.create({
-      message: message,
-      position: 'top',
-      color: status,
-      duration: 2000
-    })
-    toast.present()
-  }//end of toast
-  back(){
-    this.router.navigate(['/post-job'])
   }
 
 }

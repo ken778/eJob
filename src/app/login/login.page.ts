@@ -19,10 +19,15 @@ export class LoginPage implements OnInit {
   email: string;
   password : string;
   role:string;
+  id:any;
 
   constructor(private router: Router,private afs: AngularFirestore, private authent: AngularFireAuth, private auth : AuthService, private toastr : ToastController, private loadingCtrl : LoadingController) { }
 
   ngOnInit() {
+    this.auth.LogedUser().subscribe(result=>{
+     
+      this.id = result.uid;
+    })
   }
 
   register(){
@@ -66,7 +71,7 @@ export class LoginPage implements OnInit {
    const toast = await this.toastr.create({
      message: message,
      cssClass: 'custom',
-     position: 'bottom',
+     position: 'top',
      color: status,
      duration: 2000
    })   

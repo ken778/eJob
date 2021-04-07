@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class JobsPage implements OnInit {
 
-
+   pickedJobs:any;
    Job: any;
   jobs: any;
   Ref: any;
@@ -31,10 +31,18 @@ export class JobsPage implements OnInit {
       .GetJobs()
       .snapshotChanges()
       .subscribe((action) => {
-        console.log(action);
+        //console.log(action);
         this.jobs = action; 
       });
       console.log('im here')
+
+
+
+      //picking jobs
+      this._data.PickJobs().snapshotChanges().subscribe(data=>{
+        console.log(data)
+        this.pickedJobs = data;
+      })
   
   }
 

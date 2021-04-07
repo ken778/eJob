@@ -14,7 +14,10 @@ export class JobService {
 
   constructor(public _fire: AngularFirestore, public route: Router,public afauth: AngularFireAuth) { }
 
-
+  //getingJobs
+  PickJobs(){
+    return this._fire.collection('jobs');
+  }
 
   //get Jobs
   GetJobs() {
@@ -22,7 +25,7 @@ export class JobService {
   }
   //get single Job data
   getJobInfo(ref) {
-    return this._fire.collection('users').doc(ref).valueChanges();
+    return this._fire.collection('jobs').doc(ref).valueChanges();
   }
   //posting a job
   /*postJob(data){
@@ -34,5 +37,18 @@ export class JobService {
       alert('something went wrong');
     })
   }*/
+    //delete function
+    DeleteJob(ref) {
+      return this._fire
+        .collection('jobs')
+        .doc(ref)
+        .delete()
+        .then((resu) => {
+          console.log('deleted')
+        }).catch(error=>{
+          console.log(error.messsage);
+        })
+      
+    }
 
 }

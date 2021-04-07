@@ -25,9 +25,9 @@
 #container a {
   text-decoration: none;
 }
-.background-image{
-
-  --background: url('../../assets/background/background.jpg') ;
+ion-content {
+  --background: url("/assets/background/background.jpg") no-repeat center/cover
+    fixed;
 }
 
 .card{
@@ -37,8 +37,4 @@
 .text{
 
   color: black;
-}
-.icon2{
-  background-color: #C4C4C4;
-
 }

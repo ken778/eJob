@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
@@ -10,6 +11,9 @@ export class AboutPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+   console.log('shsds')
+  }
+  job(JobData:NgForm){
   }
 
 }

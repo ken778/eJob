@@ -14,13 +14,13 @@
     <ion-item-sliding>
       <ion-item>
         <ion-label>
-          {{item.position}} <br>
-         {{item.description}}
+         {{item.postName}} <br>
+        
         </ion-label>
       </ion-item>
       <ion-item-options>
-        <ion-item-option color="warm">
-          <ion-icon slot="start" name="trash-sharp"></ion-icon>
+        <ion-item-option color="danger">
+          <ion-icon slot="start" (click)=" delete()" name="trash-sharp"></ion-icon>
           Delete
         </ion-item-option>
       </ion-item-options>
@@ -38,13 +38,13 @@
     <ion-fab-button>
       <ion-icon (click)="toPay()" name="paper-plane-sharp"></ion-icon>
     </ion-fab-button>
-  </ion-fab> 
+  </ion-fab>
  
-  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+  <!--<ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button>
       <ion-icon (click)="post()" name="paper-plane-sharp"></ion-icon>
     </ion-fab-button>
-  </ion-fab> 
+  </ion-fab>  -->
  
 </ion-content>
 

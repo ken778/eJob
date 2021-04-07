@@ -22,7 +22,15 @@ p {
 .info {
   display: flex;
   justify-content: space-between;
+  margin-right: 4px !important;
 }
 login-btn {
   margin-bottom: 15px;
+  --box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+}
+ion-card {
+  --box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+}
+.p {
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
 }

@@ -35,6 +35,7 @@ import {AuthGuard} from './guards/auth.guard'
 
 //
 import{ Ng2SearchPipeModule} from 'ng2-search-filter';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [AppComponent],
@@ -45,7 +46,8 @@ import{ Ng2SearchPipeModule} from 'ng2-search-filter';
   AngularFireModule.initializeApp(environment.firebaseConfig),
   AngularFireAuthModule,
   AngularFirestoreModule,
-  Ng2SearchPipeModule
+  Ng2SearchPipeModule,
+  AngularFireStorageModule
 ],
   providers: [
     AuthService,
