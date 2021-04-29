@@ -13,8 +13,9 @@
 }
 
 ion-content {
-  --background: url("/assets/background/background.jpg") no-repeat center/cover
-    fixed;
+  //--background: url("/assets/background/background.jpg") no-repeat center/cover
+  //fixed;
+  --background: white;
 }
 .login-card {
   margin-top: 20px;
@@ -31,6 +32,10 @@ ion-content {
   margin-bottom: 12px;
   margin-left: 7px;
   margin-right: 7px;
+  --background: rgb(223, 60, 245);
+  --background-activated: rgb(223, 60, 245);
+  color: white;
+  --box-shadow: 0 4px 25px rgb(223, 60, 245);
 }
 .signIn {
   width: 100%;
@@ -46,8 +51,10 @@ ion-content {
 }
 ion-input {
   padding: 2% !important;
-  --background: #c4c4c4;
+  //@debug: #c4c4c4;
   color: black;
+  border: 1px solid rgb(223, 60, 245);
+  --box-shadow: 0 4px 25px rgb(107, 15, 119);
 }
 
 ion-label {
@@ -57,10 +64,12 @@ ion-label {
 .first,
 .second,
 .loginAs {
-  color: #ffffff;
+  //color: #ffffff;
+  color: black;
 }
 h3 {
-  color: #ffffff;
+  //color: #ffffff;
+  color: black;
 }
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -83,5 +92,5 @@ h3 {
   margin-top: 2rem;
 }
 .container {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }

@@ -1,4 +1,15 @@
 ion-content {
-  --background: url("/assets/background/background.jpg") no-repeat center/cover
-    fixed;
+  //--background: url("/assets/background/background.jpg") no-repeat center/cover
+  // fixed;
+}
+.top {
+  text-align: center;
+  width: 100%;
+  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  padding: 1rem;
+  background-color: rgb(223, 60, 245);
+}
+ion-card {
+  border: 0.5px solid black;
 }

@@ -1,3 +1,14 @@
-.background-image{
-    --background: url(../../../assets/background/background.jpg) ;
-  }
+.background-image {
+  --background: url(../../../assets/background/background.jpg);
+}
+
+ion-input {
+  border: 2px solid rgb(252, 87, 252);
+  --box-shadow: 0 4px 25px rgba(245, 9, 233, 0.849);
+}
+ion-button {
+  --background: rgb(252, 87, 252);
+  --background-activated: rgb(252, 87, 252);
+  color: white;
+  --box-shadow: 0 4px 25px rgba(245, 9, 233, 0.849);
+}

@@ -1,12 +1,21 @@
-<ion-header class="ion-no-border icon">
+<!--<ion-header class="ion-no-border icon">
   <ion-toolbar>
     <ion-button    (click)="toJobs()"></ion-button>
     <ion-icon class="icon2" name="arrow-back"   size="large" slot="start"></ion-icon>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>-->
+<div class="top">
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button>
+  
+        <ion-icon (click)="toJobs()" class="arrow" name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <h1 class="ejob">Profile</h1>
+</div>
 
-<ion-content class="background-image">
+<ion-content>
   <div class="container">
     <div class="overlay">
       <ion-avatar>
@@ -24,12 +33,12 @@
 <ion-card *ngIf='details'>
   <ion-card-header>
     <ion-card-title>
-      {{details.name}}
+      {{details.name}} {{details.surname}}
     </ion-card-title>
-    <ion-button  expand='block' shape='round' color='primary' [routerLink]="['/uploadimage']">Edit</ion-button>
-    <ion-card-subtitle>
-      Location
-    </ion-card-subtitle>
+   
+   <div class="applied">
+    <p>Applied</p>
+   </div>
   </ion-card-header>
   <ion-card-content>
 
@@ -39,17 +48,12 @@
       
     </ion-item>
 
-    <ion-item lines="none">
-      <ion-icon name="call"></ion-icon>
-      <ion-label>+27 *** *** ****</ion-label>
-    </ion-item>
+   
 
-    <ion-item lines="none">
-      <ion-icon name="locate"></ion-icon>
-      <ion-label>Location</ion-label>
-    </ion-item>
+  
 
   </ion-card-content>
+  <ion-button  expand='block' shape='round'  [routerLink]="['/uploadimage']">Edit</ion-button>
 </ion-card>
 
 </ion-content>

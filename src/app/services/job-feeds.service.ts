@@ -1,6 +1,6 @@
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { environment } from './../../environments/environment';
+import { environment } from './../../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 

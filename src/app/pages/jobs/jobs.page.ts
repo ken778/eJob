@@ -45,5 +45,9 @@ export class JobsPage implements OnInit {
       })
   
   }
+  //add to bookmark
+  addToLater(){
+     
+  }
 
 }

@@ -1,5 +1,5 @@
 ion-content {
-  --ion-background-color: white;
+  --ion-background-color: rgb(233, 233, 233);
 }
 
 ion-header {
@@ -42,9 +42,9 @@ ion-card {
   text-align: center;
 }
 ion-item {
-  --ion-item-background: gray;
+  --ion-item-background: white;
   text-align: center;
-  color: white;
+  color: rgb(252, 121, 252);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-style: italic;
   font-weight: 200;
@@ -66,6 +66,33 @@ ion-label {
     fixed;
 }
 ion-content {
-  --background: url("/assets/background/background.jpg") no-repeat center/cover
-    fixed;
+  //--background: url("/assets/background/background.jpg") no-repeat center/cover
+  //fixed;
+}
+.top {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(233, 233, 233);
+}
+.ejob {
+  font-weight: bolder;
+}
+ion-fab-button {
+  --background: white;
+  --background-activated: white;
+  --box-shadow: 0 4px 25px rgba(0, 0, 0, 0.849);
+}
+.arrow {
+  color: rgb(223, 60, 245);
+}
+.applied {
+  width: 100px;
+  height: 80px;
+  background-color: white;
+}
+ion-button {
+  --background: white;
+  --background-activated: white;
+  color: rgb(223, 60, 245);
+  --box-shadow: 0 4px 25px rgba(75, 73, 73, 0.849);
 }

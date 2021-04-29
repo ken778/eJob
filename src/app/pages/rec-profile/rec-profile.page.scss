@@ -42,7 +42,7 @@ ion-card {
   text-align: center;
 }
 ion-item {
-  --ion-item-background: gray;
+  --ion-item-background: rgb(223, 60, 245);
   text-align: center;
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -62,10 +62,26 @@ ion-label {
   background-color: #c4c4c4;
 }
 .background-image {
-  --background: url("/assets/background/background.jpg") no-repeat center/cover
-    fixed;
+  //--background: url("/assets/background/background.jpg") no-repeat center/cover
+  //fixed;
 }
 ion-content {
-  --background: url("/assets/background/background.jpg") no-repeat center/cover
-    fixed;
+  //--background: url("/assets/background/background.jpg") no-repeat center/cover
+  //fixed;
+}
+.top {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(223, 60, 245);
+  padding: 2rem;
+  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+}
+ion-fab-button {
+  --background: white;
+  --background-activated: white;
+  --box-shadow: 0 4px 25px rgba(0, 0, 0, 0.849);
+}
+.arrow {
+  color: rgb(223, 60, 245);
 }

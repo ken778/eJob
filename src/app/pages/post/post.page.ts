@@ -58,7 +58,7 @@ export class PostPage implements OnInit {
           this._afa.collection('jobs').add(jobData).then( () => {
             console.log('job posted')
             this.toast('Job Posted','success')
-            this.router.navigate(['/post-job'])
+            this.router.navigate(['/employer'])
           }).catch( err => {
             console.log(err.message)
           })
@@ -92,7 +92,7 @@ export class PostPage implements OnInit {
     toast.present()
   }//end of toast
   back(){
-    this.router.navigate(['/post-job'])
+    this.router.navigate(['/employer'])
   }
 
 }

@@ -1,24 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-     <!--call for menu funtioanilities-->
+
+     <!--call for menu funtioanilities
 
     
 
      <ion-buttons  slot="start" >
       <ion-menu-button class="menu" menu
       ="menu-content"></ion-menu-button>
-    </ion-buttons>
-    <!--end of call for menu funtioanilities-->
-  </ion-toolbar>
+    </ion-buttons>-->
+      <div class="top">
+        <ion-fab vertical="top" horizontal="start" slot="fixed">
+          <ion-fab-button>
+           <!--<ion-icon class="menuLines" size="large" name="menu"></ion-icon>
+              <ion-icon (click)="toJobs()" class="arrow" name="arrow-back"></ion-icon>-->
+              <ion-menu-button class="menu" menu
+              ="menu-content"></ion-menu-button>
+          </ion-fab-button>
+          
+        </ion-fab>
+        <h1 class="ejob">eJob</h1>
+      </div>
+      <ion-searchbar placeholder="Search Job"></ion-searchbar>
+      <h2 class="recent">Recent Jobs</h2>
 
-</ion-header>
+   
+   
+    <!--end of call for menu funtioanilities-->
+
 
 <ion-content>
   <!--testing link-->
-  <ion-card class="main">
-    <h1>Recent Jobs</h1>
-    <ion-card  *ngFor="let item of pickedJobs" [routerLink]="['/', 'detailed', item.payload.doc.id]"
-    routerLinkActive="router-link-active">
+ <br>
+ <br>
+    
+    <ion-card  *ngFor="let item of pickedJobs" >
     
     
    
@@ -26,7 +40,8 @@
         <ion-card-subtitle>
           
         </ion-card-subtitle>
-        <ion-card-title>{{item.payload.doc.data().postName}}</ion-card-title>
+        <ion-card-title [routerLink]="['/', 'detailed', item.payload.doc.id]"
+        routerLinkActive="router-link-active">{{item.payload.doc.data().postName}}</ion-card-title>
         <p>{{item.payload.doc.data().employmentType}}</p> 
          <p>{{item.payload.doc.data().contractType}}</p>
         
@@ -34,14 +49,9 @@
          
        
       </ion-card-header>
-      <a
-      class="back"
-      [routerLink]="['/', 'detailed', item.payload.doc.id]"
-      routerLinkActive="router-link-active"
-      ></a
-    >
+      <ion-icon size="large" name="bookmark-outline" (click)="addToLater()"></ion-icon>
     </ion-card>
-  </ion-card>
+
   
  
 

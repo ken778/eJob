@@ -135,7 +135,11 @@ const routes: Routes = [
   {
     path: 'posting',
     loadChildren: () => import('./pages/posting/posting.module').then( m => m.PostingPageModule)
+  },  {
+    path: 'application-succes',
+    loadChildren: () => import('./pages/application-succes/application-succes.module').then( m => m.ApplicationSuccesPageModule)
   },
+
 
 
 

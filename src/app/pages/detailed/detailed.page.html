@@ -1,45 +1,47 @@
-<ion-header>
+<!--<ion-header>
   <ion-toolbar>
     <ion-icon  (click)="toJobs()"  name="arrow-back"   size="large" slot="start"></ion-icon>
     <ion-title>Full Details</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>-->
 
-<ion-content>
- 
-  <ion-card  *ngIf="job" >
+<ion-content *ngIf="job">
   
   
  
-    <ion-card-header>
-    
-      <ion-card-title>{{job.postName}}</ion-card-title><br>
-      <br>
-      <ion-card-subtitle>
-        {{job.location}}
-      </ion-card-subtitle>
-      <div class="info">
-        <div class="first">
-          <p class="p">{{job.contractType}}</p>
-        </div>
-        <div class="second">
-          <p class="p">{{job.closeDate}}</p>
-          
-        </div>
-        <div class="third">
-          <p class="p">{{job.employmentType}}</p>
-        </div>
+  <div class="picture">
+   
+      <ion-fab vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button (click)="toJobs()">
+          <ion-icon  class="arrow" name="arrow-back"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <h2 class="JobDet">Job details</h2>
+   
+  </div>
+  <div class="details">
+    <h1 class="name">{{job.postName}}</h1>
+    <p>   {{job.location}}</p>
+    <div class="info">
+      <div class="first">
+        <p class="p">{{job.contractType}}</p>
       </div>
-      
-     
-    </ion-card-header>
+      <div class="second">
+        <p class="p">{{job.closeDate}}</p>
+        
+      </div>
+      <div class="third">
+        <p class="p">{{job.employmentType}}</p>
+      </div>
+    </div>
+    <div class="descr">
+      <h3 class="des">Description</h3>
+    </div>
     
-    
-  </ion-card>
-  <ion-card ion-card  *ngIf="job" >
     <p >{{job.dsc}}</p>
-
-  </ion-card>
-  <ion-button class="login-btn" expand="block" shape="round" (click)="apply(job.id_recruiter)" >Apply</ion-button>
+    
+    <ion-button class="login-btn" expand="block" shape="round" (click)="apply(job.id_recruiter)" >Apply</ion-button>
+  
+  </div>
 </ion-content>
  

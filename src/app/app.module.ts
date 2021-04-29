@@ -1,6 +1,7 @@
+import { environment } from './../environments/environment.prod';
 import { JobService } from './services/job.service';
 import { JobFeedsService } from './services/job-feeds.service';
-import { environment } from './../environments/environment';
+
 import { HttpClientModule} from '@angular/common/http';
 
 
@@ -24,8 +25,7 @@ import{ AngularFireModule} from '@angular/fire'
 import {AngularFireAuth, AngularFireAuthModule} from '@angular/fire/auth'
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore'
 
-//enviremonment
-import {} from '../environments/environment.prod';
+
 
 //services
 import {AuthService} from './services/auth.service';
@@ -36,6 +36,7 @@ import {AuthGuard} from './guards/auth.guard'
 //
 import{ Ng2SearchPipeModule} from 'ng2-search-filter';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -47,7 +48,13 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
   AngularFireAuthModule,
   AngularFirestoreModule,
   Ng2SearchPipeModule,
-  AngularFireStorageModule
+  AngularFireStorageModule,
+  ServiceWorkerModule.register('ngsw-worker.js', {
+    enabled: environment.production,
+    // Register the ServiceWorker as soon as the app is stable
+    // or after 30 seconds (whichever comes first).
+    registrationStrategy: 'registerWhenStable:30000'
+  })
 ],
   providers: [
     AuthService,

@@ -31,7 +31,7 @@ export class ForgotPasswordPage implements OnInit {
         this.router.navigate(['/login']);
       }).catch((error)=>{
         loading.dismiss();
-        this.toast(error.message,'dander');
+        this.toast('You must have entered a wrong email or the user doesnt exists','dander');
       })
     }else{
       this.toast('Please enter your email', 'danger');
@@ -46,6 +46,9 @@ export class ForgotPasswordPage implements OnInit {
       duration:2000
     })
     toast.present();
+  }
+  toLogin(){
+    this.router.navigate(['/login'])
   }
 
 }

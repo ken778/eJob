@@ -1,10 +1,20 @@
-<ion-header class="ion-no-border icon">
+<!--ion-header class="ion-no-border icon">
   <ion-toolbar>
     
     <ion-icon  (click)="toJobs()"  name="arrow-back"   size="large" slot="start"></ion-icon>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>-->
+<div class="top">
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="toJobs()" >
+      <ion-icon  class="arrow" name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <!--<ion-icon  (click)="toJobs()"  name="arrow-back"   size="large" slot="start"></ion-icon>-->
+  <h1 class="prof">Profile</h1>
+</div>
 
 <ion-content class="background-image">
   <div class="container">
@@ -24,12 +34,10 @@
 <ion-card *ngIf='details'>
   <ion-card-header>
     <ion-card-title>
-      {{details.name}}
+      {{details.name}} {{details.surname}}
     </ion-card-title>
-    <ion-button  expand='block' shape='round' color='primary' [routerLink]="['/uploadimage']">Edit</ion-button>
-    <ion-card-subtitle>
-      Location
-    </ion-card-subtitle>
+   
+   
   </ion-card-header>
   <ion-card-content>
 
@@ -38,11 +46,7 @@
       <ion-label>{{details.email}}</ion-label>
     </ion-item>
 
-    <ion-item lines="none">
-      <ion-icon name="call"></ion-icon>
-      <ion-label>+27 *** *** ****</ion-label>
-    </ion-item>
-
+    <ion-button  expand='block' shape='round' color='primary' [routerLink]="['/uploadimage']">Edit</ion-button>
     <ion-button (click)='logout()'  expand='block' shape='round' color='danger'>Logout</ion-button>
 
   </ion-card-content>

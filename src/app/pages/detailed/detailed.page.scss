@@ -3,12 +3,8 @@ ion-card-subtitle {
   text-align: center;
 }
 
-ion-content {
-  --background: url("/assets/background/background.jpg") no-repeat center/cover
-    fixed;
-}
 .p {
-  padding: 3%;
+  padding: 5%;
   background-color: #c4c4c4;
   width: 100px;
   text-align: center;
@@ -17,20 +13,69 @@ ion-content {
   border-radius: 10px;
 }
 p {
-  padding: 3%;
 }
 .info {
   display: flex;
   justify-content: space-between;
   margin-right: 4px !important;
 }
-login-btn {
-  margin-bottom: 15px;
-  --box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+.login-btn {
+  --box-shadow: 0 4px 25px rgba(239, 155, 247, 0.849);
+  margin-bottom: 5rem;
+  --background: rgb(223, 60, 245);
+  --background-activated: rgb(223, 60, 245);
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 ion-card {
   --box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
 .p {
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+}
+.details {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  border-top-right-radius: 70px;
+  height: 80vh;
+  padding: 8px;
+}
+.descr {
+  border-top: 1px solid rgb(117, 117, 117);
+  border-width: 90%;
+}
+.picture {
+  //background-image: url(../../../assets/images/jobSearch.jpg);
+  background-size: cover;
+  height: 50vh;
+  background-color: rgb(223, 60, 245);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+}
+.job {
+  display: flex;
+  justify-content: space-around;
+}
+ion-fab-button {
+  --background: white;
+  --background-activated: white;
+  --box-shadow: 0 4px 25px rgba(0, 0, 0, 0.849);
+}
+.arrow {
+  color: rgb(223, 60, 245);
+}
+.name {
+  font-weight: bold;
+  color: rgb(110, 110, 110);
+}
+.des {
+  font-weight: bolder;
+  color: rgb(110, 110, 110);
+  margin-left: 10px;
+}
+.JobDet {
+  color: white;
 }

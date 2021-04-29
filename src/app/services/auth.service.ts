@@ -97,7 +97,19 @@ export class AuthService {
   }
 
   
-
+  UpdateStudentInfo(ref, record) {
+    return this.afs
+      .collection('user')
+      .doc(ref)
+      .update(record)
+      .then((results) => {
+        this.toast('Details updated','success')
+        this.router.navigate(['/profile'])
+      })
+      .catch((err) => {
+        console.log('error occured, ', err);
+      });
+  }
     
 
 }

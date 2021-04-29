@@ -1,18 +1,23 @@
-<ion-header [translucent]="true">
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-icon class="icon2" name="arrow-back"  (click)="back()" size="large" slot="start"></ion-icon>
     <ion-title> Post </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>-->
+<div class="top">
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="back()">
+      <ion-icon  class="arrow" name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <h2>post</h2>
+</div>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle></ion-card-subtitle>
-      <ion-card-title>POST A JOB HERE!!!!</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
+<ion-content >
+   <br>
+   <br>
+   <br>
   <form (ngSubmit)="job(JobData)" #JobData="ngForm">
     <div class="inpu">
       <ion-label for="ref">Enter company name:</ion-label><br>
@@ -171,6 +176,7 @@
    
   </div>
     
-    <ion-button type="submit" color="primary">POST</ion-button>
+    <!--<ion-button type="submit" color="primary">POST</ion-button>-->
+    <ion-button type="submit" class="login-btn" expand="block" shape="round" >POST</ion-button>
   </form>
 </ion-content>

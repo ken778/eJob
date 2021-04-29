@@ -71,7 +71,7 @@ export class DetailedPage implements OnInit {
   }
 
 
-  toJobs(){
+ toJobs(){
     this.router.navigate(['/jobs'])
   }
 
