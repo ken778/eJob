@@ -139,6 +139,10 @@ const routes: Routes = [
     path: 'application-succes',
     loadChildren: () => import('./pages/application-succes/application-succes.module').then( m => m.ApplicationSuccesPageModule)
   },
+  {
+    path: 'rec-update',
+    loadChildren: () => import('./pages/rec-update/rec-update.module').then( m => m.RecUpdatePageModule)
+  },
 
 
 

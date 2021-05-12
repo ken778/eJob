@@ -1,3 +1,4 @@
+import { AngularFirestore } from '@angular/fire/firestore';
 import { JobService } from './../../services/job.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -13,7 +14,7 @@ export class JobsPage implements OnInit {
    Job: any;
   jobs: any;
   Ref: any;
-  constructor(public _data: JobService, public _route: ActivatedRoute) { }
+  constructor(public _data: JobService, public _route: ActivatedRoute,private afs:AngularFirestore) { }
 
   ngOnInit() {
    /*  //get Job id
@@ -46,8 +47,10 @@ export class JobsPage implements OnInit {
   
   }
   //add to bookmark
-  addToLater(){
-     
+  addToLater(id){
+     this.afs.collection('bookmark').add({
+       'jobId':id,
+     })
   }
 
 }

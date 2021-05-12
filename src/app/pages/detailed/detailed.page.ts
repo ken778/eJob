@@ -55,6 +55,7 @@ export class DetailedPage implements OnInit {
             //code to send data to applications collection
             this.afs.collection('applications').add(ApplicationData).then(()=>{
             console.log('applied')
+            this.router.navigate(['/application-succes'])
           }).catch(error=>{
             console.log('something went wrong!')
             console.log(error.messsage)
@@ -65,9 +66,9 @@ export class DetailedPage implements OnInit {
       })
     console.log(id)
     //this.router.navigate(['/application-form',this.joID,this.joID ])
-    this.toast('Application submitted','success').then(()=>{
-      this.router.navigate(['/jobs'])
-    })
+   
+      
+   
   }
 
 

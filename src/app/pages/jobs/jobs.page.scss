@@ -54,3 +54,8 @@ ion-searchbar {
 .recent {
   padding: 0.5rem;
 }
+ion-header {
+  //--ion-background-color: rgb(223, 60, 245) !important;
+  --background-color: rgb(223, 60, 245);
+  //color: white;
+}

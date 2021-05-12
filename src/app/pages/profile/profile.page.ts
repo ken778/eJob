@@ -24,7 +24,7 @@ export class ProfilePage implements OnInit {
   profileEmail: any;
   
   details:any;
-
+  total:any;
   constructor(private  database: AngularFirestore, private auth : AuthService,private router:Router) {
     }
   ngOnInit(){
@@ -42,11 +42,21 @@ export class ProfilePage implements OnInit {
        console.log(data);
         this.details=data;
       })
+ 
+    
+      this.database
+        .collection('applications', (ref) => ref.where('userID', '==', res.uid))
+        .valueChanges()
+        .subscribe((dat) => {
+          console.log(dat);
+          console.log(dat.length)
+          this.total = dat.length;
+        });
 
        
     }) 
     
-
+    
 
 
      

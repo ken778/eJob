@@ -55,6 +55,10 @@ ion-card {
   display: flex;
   justify-content: space-around;
 }
+ion-toolbar {
+  --background-color: white;
+  color: black;
+}
 .job {
   display: flex;
   justify-content: space-around;
@@ -78,4 +82,7 @@ ion-fab-button {
 }
 .JobDet {
   color: white;
+}
+.bak {
+  color: black;
 }

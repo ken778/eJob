@@ -4,6 +4,16 @@
     <ion-title>Full Details</ion-title>
   </ion-toolbar>
 </ion-header>-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="toJobs()">
+        <ion-icon  class="bak" slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Job details</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content *ngIf="job">
   
@@ -11,12 +21,7 @@
  
   <div class="picture">
    
-      <ion-fab vertical="top" horizontal="start" slot="fixed">
-        <ion-fab-button (click)="toJobs()">
-          <ion-icon  class="arrow" name="arrow-back"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
-      <h2 class="JobDet">Job details</h2>
+     
    
   </div>
   <div class="details">
